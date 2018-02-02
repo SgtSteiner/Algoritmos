@@ -1,6 +1,8 @@
 """
 Problem #6 Rounding
 
+http://www.codeabbey.com/index/task_view/rounding
+
 When program deals with numbers which have fraction part we sometimes want to round such values to whole integer.
 We'll need this for programming some later problems (to make answers simpler, for example), so let us have the
 following dedicated exercise to learn this trick.
@@ -39,6 +41,6 @@ num_data = int(input())
 result = []
 for i in range(num_data):
     x, y = map(int, input().split())
-    result.append(str(round(x / y)))
+    result.append(round(x / y))
 
-print(" ".join(result))
+print(" ".join(map(str, result)))

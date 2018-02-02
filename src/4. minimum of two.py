@@ -1,8 +1,11 @@
 """
 Problem #4 Minimum of two
 
+http://www.codeabbey.com/index/task_view/min-of-two
+
 Depending on your programming language syntax could be different and else part is almost always optional.
-You can read more in wikipedia article on Conditional statements.
+You can read more in wikipedia article on Conditional statements
+(http://en.wikipedia.org/wiki/Conditional_(computer_programming)).
 
 Of two numbers, please, select one with minimum value. Here are several pairs of numbers for thorough testing.
 
@@ -39,9 +42,5 @@ Test Data:
 """
 
 num_data = int(input())
-result = []  # Lista para almacenar los menores
-for i in range(num_data):
-    list_data = map(int, input().split())
-    result.append(str(min(list_data)))
-
-print(" ".join(result))
+result = [min(map(int, input().split())) for i in range(num_data)]
+print(" ".join(map(str, result)))

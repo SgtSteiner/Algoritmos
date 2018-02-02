@@ -1,6 +1,8 @@
 """
 Problem #5 Minimum of three
 
+http://www.codeabbey.com/index/task_view/min-of-three
+
 Several triplets of numbers are given to you. Your task is to select minimum among each of triplets.
 
 Input data will contain in the first line the number of triplets to follow.
@@ -34,9 +36,5 @@ Test Data:
 """
 
 num_data = int(input())
-result = []
-for i in range(num_data):
-    list_data = map(int, input().split())
-    result.append(str(min(list_data)))
-
-print(" ".join(result))
+result = [min(map(int, input().split())) for i in range(num_data)]
+print(" ".join(map(str, result)))
