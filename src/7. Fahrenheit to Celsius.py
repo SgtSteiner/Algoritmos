@@ -17,7 +17,8 @@ You are to write program to convert degrees of Fahrenheit to Celsius.
 Input data contains N+1 values, first of them is N itself (Note that you should not try to convert it).
 Answer should contain exactly N results, rounded to nearest integer and separated by spaces.
 
-Test Data: 35 528 519 257 595 287 335 318 305 213 194 468 233 447 170 561 279 476 85 199 513 458 349 195 325 341 385
+Test Data: 35
+528 519 257 595 287 335 318 305 213 194 468 233 447 170 561 279 476 85 199 513 458 349 195 325 341 385
 93 442 350 465 151 277 384 377 272
 
 """
