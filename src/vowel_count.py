@@ -39,14 +39,20 @@ rnbyxdcyhasphugwacpxhraggnwg uwmqyrpjotwunmkqz rcuq
 """
 
 VOWELS = "aeiouy"
-results = []
-num_data = int(input())
-for x in range(num_data):
-    letters = list(input())
+
+
+def vowel_count(word):
     counter = 0
-    for letter in letters:
+    for letter in word:
         if letter.lower() in VOWELS:
             counter += 1
-    results.append(counter)
+    return counter
 
-print(" ".join(map(str, results)))
+
+if __name__ == "__main__":
+    results = []
+    num_data = int(input())
+    for x in range(num_data):
+        results.append(vowel_count(list(input())))
+
+    print(" ".join(map(str, results)))

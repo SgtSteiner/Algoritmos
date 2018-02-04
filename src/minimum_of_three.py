@@ -35,6 +35,12 @@ Test Data:
 
 """
 
-num_data = int(input())
-result = [min(map(int, input().split())) for i in range(num_data)]
-print(" ".join(map(str, result)))
+
+def minimum_three(datalist):
+    return min(datalist)
+
+
+if __name__ == "__main__":
+    num_data = int(input())
+    result = [minimum_three(map(int, input().split())) for i in range(num_data)]
+    print(" ".join(map(str, result)))
