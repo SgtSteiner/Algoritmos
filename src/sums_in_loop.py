@@ -26,10 +26,15 @@ Test Data:
 
 """
 
-num_data = int(input())
-total = []
-for i in range(num_data):
-    x, y = map(int, input().split())
-    total.append(str(x + y))
 
-print(" ".join(total))
+def sum_in_loop(datalist):
+    return sum(datalist)
+
+
+if __name__ == "__main__":
+    num_data = int(input())
+    total = []
+    for i in range(num_data):
+        total.append(sum_in_loop(map(int, input().split())))
+
+    print(" ".join(map(str, total)))

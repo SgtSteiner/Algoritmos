@@ -15,6 +15,13 @@ Test Data:
 1109 666 697 120 344 901 832 610 296 753 382
 
 """
-num_data = int(input())
-list_data = map(int, input().split())
-print(sum(list_data))
+
+
+def sum_in_loop(datalist):
+    return sum(datalist)
+
+
+if __name__ == "__main__":
+    num_data = int(input())
+    list_data = map(int, input().split())
+    print(sum_in_loop(list_data))
