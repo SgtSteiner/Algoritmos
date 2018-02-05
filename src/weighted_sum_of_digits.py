@@ -22,15 +22,16 @@ Test data: 31
 
 """
 
-num_data = int(input())
-datos = input().split()
-results = []
 
-for dato in datos:
+def calc_wsd(digits):
     sumatorio = 0
-    cifra = list(dato)
-    for i in range(len(cifra)):
-        sumatorio += int(cifra[i]) * (i + 1)
-    results.append(sumatorio)
+    for i in range(len(digits)):
+        sumatorio += int(digits[i]) * (i + 1)
+    return sumatorio
 
-print(" ".join(map(str, results)))
+
+if __name__ == "__main__":
+    num_data = int(input())
+    datos = input().split()
+    results = [calc_wsd(dato) for dato in datos]
+    print(" ".join(map(str, results)))

@@ -35,14 +35,14 @@ Test data:
 18 261 481 498 131 470 307 173 42 344 380 312 119 349 0
 
 """
-
 from statistics import mean
 
-num_data = int(input())
-results = []
-for i in range(num_data):
-    lista = list(map(int, input().split()))
-    lista.pop()
-    results.append(round(mean(lista)))
 
-print(" ".join(map(str, results)))
+def calc_average(datalist):
+    return round(mean(datalist))
+
+
+if __name__ == "__main__":
+    num_data = int(input())
+    results = [calc_average(list(map(int, input().split()))[:-1]) for i in range(num_data)]
+    print(" ".join(map(str, results)))
