@@ -35,11 +35,16 @@ Test data:
 
 """
 
-num_data = int(input())
-datos = list(map(int, input().split()))
-resultado = 0
-for dato in datos:
-    resultado += dato
-    resultado *= 113
-    resultado %= 10000007
-print(resultado)
+
+def calc_checksum(datalist):
+    result = 0
+    for dato in datalist:
+        result += dato
+        result *= 113
+        result %= 10000007
+    return result
+
+
+if __name__ == "__main__":
+    num_data = int(input())
+    print(calc_checksum(list(map(int, input().split()))))

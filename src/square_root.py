@@ -47,13 +47,19 @@ Test data:
 
 """
 
-num_data = int(input())
-results = []
-for i in range(num_data):
-    x, n = map(int, input().split())
-    r = 1
-    for y in range(n):
-        r = (r + (x / r)) / 2
-    results.append(r)
 
-print(" ".join(map(str, results)))
+def calc_square_root(v, step):
+    result = 1
+    for _ in range(step):
+        result = (result + (v / result)) / 2
+    return result
+
+
+if __name__ == "__main__":
+    num_data = int(input())
+    results = []
+    for i in range(num_data):
+        x, n = map(int, input().split())
+        results.append(calc_square_root(x, n))
+
+    print(" ".join(map(str, results)))

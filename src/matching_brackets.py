@@ -43,10 +43,9 @@ Test data:
 
 OPEN = "([{<"
 CLOSE = ")]}>"
-results = []
-num_data = int(input())
-for x in range(num_data):
-    datos = list(input())
+
+
+def calc_matching_brackets(datos):
     brackets = []
     res = True
     for dato in datos:
@@ -62,6 +61,10 @@ for x in range(num_data):
                 else:
                     res = False
                     break
-    results.append(int(not brackets and res))
+    return int(not brackets and res)
 
-print(" ".join(map(str, results)))
+
+if __name__ == "__main__":
+    num_data = int(input())
+    results = [calc_matching_brackets(input()) for x in range(num_data)]
+    print(" ".join(map(str, results)))

@@ -6,6 +6,9 @@ from minimum_of_two import minimum
 from minimum_of_three import minimum_three
 from vowel_count import vowel_count
 from array_counters import count_elem_array
+from matching_brackets import calc_matching_brackets
+from square_root import calc_square_root
+from array_checksum import calc_checksum
 
 
 class TestSumInLoop(unittest.TestCase):
@@ -50,6 +53,27 @@ class TestArrayCounters(unittest.TestCase):
 
     def test_count_elem_array(self):
         self.assertEqual(count_elem_array([3, 2, 1, 2, 3, 1, 1, 1, 1, 3]), [5, 2, 3])
+
+
+class TestMatchingBrackets(unittest.TestCase):
+
+    def test_calc_matching_brackets(self):
+        self.assertEqual(calc_matching_brackets("(a+[b*c]-{d/3})"), 1)
+        self.assertEqual(calc_matching_brackets("(a + [b * c) - 17]"), 0)
+        self.assertEqual(calc_matching_brackets("auf(zlo)men [gy<psy>] four{s}"), 1)
+
+
+class TestSquareRoot(unittest.TestCase):
+
+    def test_calc_square_root(self):
+        self.assertEqual(calc_square_root(150, 0), 1)
+        self.assertEqual(calc_square_root(10, 3), 3.196005081874647)
+
+
+class TestArrayChecksum(unittest.TestCase):
+
+    def test_calc_checksum(self):
+        self.assertEqual(calc_checksum([3, 1, 4, 1, 5, 9]), 8921379)
 
 
 if __name__ == "__main__":
