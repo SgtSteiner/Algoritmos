@@ -14,6 +14,8 @@ from weighted_sum_of_digits import calc_wsd
 from two_printers import calc_print_time
 import bubble_in_array
 from newmann_random_generator import sequence_generator, calc_iterations
+from binary_search import binary_search, calc_equation
+from binary_search_in_array import load_dbip, binary_search as binary_search_array
 
 
 class TestSumInLoop(unittest.TestCase):
@@ -122,6 +124,30 @@ class TestNewmannRandomGenerator(unittest.TestCase):
         self.assertEqual(calc_iterations(1), 2)
         self.assertEqual(calc_iterations(4100), 4)
         self.assertEqual(calc_iterations(5761), 88)
+
+
+class TestBinarySearch(unittest.TestCase):
+
+    def test_calc_equation(self):
+        self.assertEqual(calc_equation(0.71360986, 1.04451559, 1371.39624514, 666.33994060, 50), -765.8759035146836)
+
+    def test_binary_search(self):
+        self.assertEqual(binary_search([9.36908730, 1.18286813, 388.56234885, 702.52504444]), 48.33345944061875)
+        self.assertEqual(binary_search([0.12470827, 0.66066792, 1429.23301339, -665.29260768]), 30.320073943585157)
+
+
+class TestBinarySearchArray(unittest.TestCase):
+
+    def test_load_dbip(self):
+        ip_countries = load_dbip()
+        self.assertEqual(len(ip_countries), 199558)
+        self.assertEqual(ip_countries[0], ['0', '9zldr', 'US'])
+        self.assertEqual(ip_countries[-1], ['1q5h1q8', '8vn08v', 'US'])
+
+    def test_binary_search_array(self):
+        ip_countries = load_dbip()
+        self.assertEqual(binary_search_array("1keei5f", ip_countries), "AU")
+        self.assertEqual(binary_search_array("1gvvigc", ip_countries), "EC")
 
 
 if __name__ == "__main__":
