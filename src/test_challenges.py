@@ -16,6 +16,7 @@ import bubble_in_array
 from newmann_random_generator import sequence_generator, calc_iterations
 from binary_search import binary_search, calc_equation
 from binary_search_in_array import load_dbip, binary_search as binary_search_array
+from luhn_algorithm import calc_card_number
 
 
 class TestSumInLoop(unittest.TestCase):
@@ -148,6 +149,15 @@ class TestBinarySearchArray(unittest.TestCase):
         ip_countries = load_dbip()
         self.assertEqual(binary_search_array("1keei5f", ip_countries), "AU")
         self.assertEqual(binary_search_array("1gvvigc", ip_countries), "EC")
+
+
+class TestLuhnAlgorithm(unittest.TestCase):
+
+    def test_calc_card_number(self):
+        self.assertEqual(calc_card_number("?942682966937054"), "3942682966937054")
+        self.assertEqual(calc_card_number("1217400151414995"), "1217040151414995")
+        self.assertEqual(calc_card_number("2146133934?67114"), "2146133934667114")
+        self.assertEqual(calc_card_number("2553514623364925"), "2553514623369425")
 
 
 if __name__ == "__main__":

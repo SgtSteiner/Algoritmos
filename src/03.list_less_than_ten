@@ -1,0 +1,16 @@
+num = int(input("Enter a number: "))
+
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+
+for number in a:
+    if number < 5:
+        print(number)
+
+
+# Extra 1
+b = [number for number in a if number < 5]
+print(b)
+
+# Extra 3
+b = [number for number in a if number < num]
+print(b)
