@@ -39,6 +39,6 @@ def montecarlo(initial_us, initial_projects):
 
 if __name__ == '__main__':
     USER_STORIES = 30   # Number of user stories per project
-    PROJECTS = 200000   # Number of projects to be executed
+    PROJECTS = 50000   # Number of projects to be executed
 
     draw_histogram(montecarlo(USER_STORIES, PROJECTS))
