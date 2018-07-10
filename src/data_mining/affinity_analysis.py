@@ -12,6 +12,10 @@ def print_rule(premise, conclusion, support, confidence, features):
 
 
 if __name__ == "__main__":
+
+    features = ["pan", "leche", "queso", "manzanas", "plátanos"]
+
+    # Cargamos el dataset con las muestras de compras realizadas de las diferentes features
     dataset_filename = "datasets\\affinity_dataset.txt"
     x = np.loadtxt(dataset_filename)
 
@@ -19,15 +23,13 @@ if __name__ == "__main__":
     invalid_rules = defaultdict(int)
     num_occurances = defaultdict(int)
 
-    features = ["pan", "leche", "queso", "manzanas", "plátanos"]
-
     for sample in x:
         for premise in range(len(features)):
             if sample[premise] == 0:
                 continue
             num_occurances[premise] += 1
             for conclusion in range(len(features)):
-                if premise == conclusion:
+                if premise == conclusion:   # se excluyen casos como "si se compra pan también se compra pan"
                     continue
                 if sample[conclusion] == 1:
                     valid_rules[(premise, conclusion)] += 1
@@ -39,9 +41,6 @@ if __name__ == "__main__":
     for premise, conclusion in valid_rules.keys():
         rule = (premise, conclusion)
         confidence[rule] = valid_rules[rule] / num_occurances[premise]
-
-    print("Número de compras realizadas: {}".format(len(x)))
-    print()
 
     sorted_support = sorted(support.items(), key=itemgetter(1), reverse=True)
     for index in range(5):
